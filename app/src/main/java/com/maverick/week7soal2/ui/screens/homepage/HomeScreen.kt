@@ -68,7 +68,6 @@ fun HomeScreen(
     }
 }
 
-// Sesuai gambar: 'Loading...'
 @Composable
 fun LoadingScreen(modifier: Modifier = Modifier) {
     Column(
@@ -82,7 +81,6 @@ fun LoadingScreen(modifier: Modifier = Modifier) {
     }
 }
 
-// Sesuai gambar: 'Error: Tidak ada koneksi internet.'
 @Composable
 fun ErrorScreen(message: String, modifier: Modifier = Modifier, onRetry: () -> Unit) {
     Column(
@@ -105,7 +103,6 @@ fun ErrorScreen(message: String, modifier: Modifier = Modifier, onRetry: () -> U
             fontSize = MaterialTheme.typography.headlineSmall.fontSize
         )
         Spacer(Modifier.height(8.dp))
-        // Pesan error sesuai gambar: "Error: Tidak ada koneksi internet."
         Text(
             text = message,
             color = OrangeRetro,
@@ -139,7 +136,7 @@ fun ArtistContent(artist: Artist, albums: List<Album>, modifier: Modifier, onAlb
                 verticalArrangement = Arrangement.spacedBy(16.dp),
                 horizontalArrangement = Arrangement.spacedBy(16.dp),
                 modifier = Modifier
-                    .heightIn(max = 1000.dp) // Max height untuk mengatasi LazyColumn nested LazyVerticalGrid
+                    .heightIn(max = 1000.dp)
                     .fillMaxWidth()
             ) {
                 items(albums) { album ->
@@ -205,7 +202,7 @@ fun ArtistHeader(artist: Artist) {
         }
     }
 
-    // Biografi Singkat (Sesuai contoh John Mayer)
+    // Biografi Singkat
     Column(modifier = Modifier.padding(16.dp)) {
         val bio = artist.strBiographyEN?.take(300) ?: "No biography available."
         Text(
@@ -222,8 +219,6 @@ fun AlbumGridItem(album: Album, onAlbumClick: (String) -> Unit) {
     OutlinedCard(
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.outlinedCardColors(containerColor = PrimaryDark),
-        // === PERBAIKAN DI SINI: Menggunakan BorderStroke secara langsung ===
-        // =================================================================
         modifier = Modifier
             .fillMaxWidth()
             .clickable { onAlbumClick(album.idAlbum) }
@@ -248,7 +243,7 @@ fun AlbumGridItem(album: Album, onAlbumClick: (String) -> Unit) {
                 )
                 Spacer(Modifier.height(4.dp))
                 Text(
-                    text = "${album.intYearReleased ?: "N/A"} • ${album.strGenre ?: "Indie"}", // Sesuai gambar
+                    text = "${album.intYearReleased ?: "N/A"} • ${album.strGenre ?: "Indie"}",
                     style = MaterialTheme.typography.bodySmall,
                     color = Color.LightGray
                 )

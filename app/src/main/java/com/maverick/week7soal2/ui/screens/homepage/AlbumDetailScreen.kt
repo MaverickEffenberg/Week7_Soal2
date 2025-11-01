@@ -108,8 +108,6 @@ fun AlbumHeader(album: Album) {
         OutlinedCard(
             shape = RoundedCornerShape(8.dp),
             colors = CardDefaults.outlinedCardColors(containerColor = PrimaryDark),
-            // === PERBAIKAN DI SINI: Ganti CardDefaults.outlinedCardBorder dengan BorderStroke ===
-            // =================================================================================
         ) {
             Image(
                 painter = rememberAsyncImagePainter(
@@ -128,7 +126,7 @@ fun AlbumHeader(album: Album) {
 
         Spacer(Modifier.height(16.dp))
 
-        // Informasi Album (Sesuai gambar "Sob Rock")
+        // Informasi Album
         Text(
             text = album.strAlbum,
             style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold),

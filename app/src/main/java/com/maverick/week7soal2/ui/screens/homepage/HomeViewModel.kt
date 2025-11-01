@@ -58,7 +58,7 @@ class HomeViewModel(private val repository: ArtistRepository) : ViewModel() {
 
     private fun handleError(e: Throwable) {
         val message = when (e) {
-            is IOException -> "Error: Tidak ada koneksi internet." // Sesuai gambar error
+            is IOException -> "Error: Tidak ada koneksi internet."
             is NoSuchElementException, is NullPointerException -> "Error: Data artis tidak ditemukan."
             else -> "Error: Gagal memuat data. ${e.localizedMessage ?: "Unknown error"}"
         }

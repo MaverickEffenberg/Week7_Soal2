@@ -26,7 +26,7 @@ data class Album(
     val strArtist: String? // Tambahan untuk detail album
 )
 
-// Model untuk Detail Album (digunakan juga oleh AlbumResponse jika albumId diketahui)
+// Model untuk Detail Album
 data class AlbumDetailResponse(
     @SerializedName("album")
     val albums: List<Album>?

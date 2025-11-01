@@ -12,10 +12,6 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.maverick.week7soal2.ui.theme.ArtistExplorerTheme
 
-// Pastikan AlbumDetailScreen dan HomeScreen dapat diakses.
-// Karena mereka berada di paket yang sama, seharusnya tidak perlu import eksplisit,
-// tetapi jika error muncul, itu harus diimpor secara eksplisit (atau cek file tidak hilang).
-
 sealed class Screen(val route: String) {
     object Home : Screen("home")
     object AlbumDetail : Screen("albumDetail/{albumId}") {
@@ -46,7 +42,6 @@ fun ArtistExplorerApp() {
                 ) { backStackEntry ->
                     val albumId = backStackEntry.arguments?.getString("albumId")
                     if (albumId != null) {
-                        // Unresolved reference terjadi di sini jika import/file hilang
                         AlbumDetailScreen(
                             albumId = albumId,
                             onBackClick = { navController.popBackStack() }

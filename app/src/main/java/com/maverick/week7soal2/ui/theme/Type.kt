@@ -1,5 +1,3 @@
-// File: app/src/main/kotlin/com/maverick/week7soal2/ui.theme/Type.kt
-
 package com.maverick.week7soal2.ui.theme
 
 import androidx.compose.material3.Typography
@@ -8,7 +6,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// Objek Typography yang akan digunakan di Theme.kt
 val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = FontFamily.Default,
@@ -17,7 +14,7 @@ val Typography = Typography(
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
     ),
-    headlineMedium = TextStyle( // Tambahkan gaya yang sering digunakan
+    headlineMedium = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Bold,
         fontSize = 28.sp,
@@ -31,5 +28,4 @@ val Typography = Typography(
         lineHeight = 24.sp,
         letterSpacing = 0.15.sp
     )
-    /* Anda dapat menambahkan gaya lain di sini */
 )
